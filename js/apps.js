@@ -37,7 +37,7 @@ const displaySearchResult = docs => {
 
     docs.slice(0, 30).forEach(doc => {
 
-      console.log(doc);
+      // console.log(doc);
       const div = document.createElement('div');
       div.classList.add('col');
       div.innerHTML = `
