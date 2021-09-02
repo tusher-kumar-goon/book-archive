@@ -4,18 +4,22 @@ const searchBook = () => {
   const searchField = document.getElementById('search-field');
   const searchText = searchField.value;
   // console.log(searchText);
-  if (searchText === ' ') {
+  if (searchText === '') {
     result.innerText = 'You have to write something to search!';
   }
-  // clear data
-  searchField.value = ' ';
-  // load data
-  const url = `https://openlibrary.org/search.json?q=${searchText}`
+  else {
+    result.innerText = '';
+
+    // clear data
+    searchField.value = ' ';
+    // load data
+    const url = `https://openlibrary.org/search.json?q=${searchText}`
 
 
-  fetch(url)
-    .then(res => res.json())
-    .then(data => displaySearchResult(data.docs));
+    fetch(url)
+      .then(res => res.json())
+      .then(data => displaySearchResult(data.docs));
+  }
 }
 
 
@@ -25,7 +29,7 @@ const displaySearchResult = docs => {
   searchResult.textContent = ' ';
   // forEach
   if (docs.length === 0) {
-    result.innerText = 'Showing top 100 results';
+    result.innerText = 'Please Give a Valid Book Name For Search';
   }
   else {
     result.innerText = `Showing top result:${docs.length}`;
