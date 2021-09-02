@@ -3,7 +3,7 @@
 * {
   font-family: "Poppins", sans-serif;
 }
- /* .bg{
+ .bg{
   background-color: rgba(36, 35, 35, 0.877);
 }
 .form-control{
@@ -12,11 +12,13 @@
 .find-title{
   color: #0dcaf0;
   font-weight: 600;
-} */
+}
 .cart{
-  margin:0px 40px 0px 40px;
+  margin:0px 100px 0px 100px;
+  
 }
 .information-result{
   background-color:#0dcaf0;
-
-}
+  margin-left: 350px;
+  margin-right: 350px;
+  }

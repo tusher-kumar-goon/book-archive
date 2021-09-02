@@ -5,10 +5,11 @@ const searchBook = () => {
   const searchText = searchField.value;
   // console.log(searchText);
   if (searchText === '') {
+    searchResult.textContent = ' ';
     result.innerText = 'You have to write something to search!';
   }
   else {
-    result.innerText = '';
+    result.innerText = ' ';
 
     // clear data
     searchField.value = ' ';
@@ -32,9 +33,9 @@ const displaySearchResult = docs => {
     result.innerText = 'Please Give a Valid Book Name For Search';
   }
   else {
-    result.innerText = `Showing top result:${docs.length}`;
+    result.innerText = `Showing  result:${docs.length}`;
 
-    docs.forEach(doc => {
+    docs.slice(0, 30).forEach(doc => {
 
       console.log(doc);
       const div = document.createElement('div');
@@ -44,9 +45,9 @@ const displaySearchResult = docs => {
            <img src="https://covers.openlibrary.org/b/id/${doc.cover_i}-M.jpg" class="card-img-top p-3 h-100 w-100" alt="...">
            <div class="card-body">
             <h2 class="card-title">${doc.title}</h2>
-            <p class="card-text">Author : ${doc.author_name}</p>
+            <p class="card-text">Author : ${doc.author_name ? doc.author_name[0] : 'n/a'}</p>
             <p class="card-text">First Published : ${doc.first_publish_year}</p>
-            <p class="card-text">publisher : ${doc.publisher}</p>
+            <p class="card-text">publisher : ${doc.publisher ? doc.publisher[0] : 'n/a'}</p>
           </div>
         </div>
     `;
